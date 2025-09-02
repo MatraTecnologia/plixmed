@@ -1,0 +1,419 @@
+/* Cores principais para tema claro */
+:root {
+  --cor-primaria: #f44336;
+  --cor-primaria-hover: #e53935;
+  --cor-primaria-light: #ffebee;
+  --cor-secundaria: #ff9800;
+  --cor-terciaria: #4caf50;
+  --cor-texto: #1f2937;
+  --cor-texto-secundario: #6b7280;
+  --cor-borda: #e5e7eb;
+  --cor-fundo: #ffffff;
+  --cor-fundo-lateral: #f9fafb;
+  --cor-branco: #ffffff;
+  --cor-card: #ffffff;
+  --cor-card-hover: #f9fafb;
+  --cor-card-selecionado: #fef2f2;
+  --cor-texto-card-selecionado: #991b1b;
+}
+
+/* Modal de agendamento */
+.dialog-agendamento {
+  max-width: 72rem;
+  width: 100%;
+  height: 90vh;
+  max-height: 90vh;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  padding: 0;
+  overflow: hidden;
+}
+
+.painel-lateral {
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.indicador-progresso {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.indicador-ativo {
+  background-color: var(--cor-primaria);
+  transform: scale(1.25);
+}
+
+.indicador-completo {
+  background-color: #fca5a5;
+}
+
+.indicador-inativo {
+  background-color: #d1d5db;
+}
+
+.icone-etapa {
+  font-size: 3.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--cor-primaria);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+}
+
+.dialog-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.dialog-content {
+  display: flex;
+  height: calc(100% - 80px);
+}
+
+.dialog-main {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.dialog-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botao-proximo {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-proximo:hover:not(:disabled) {
+  background-color: var(--cor-primaria-hover);
+}
+
+.botao-proximo:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.botao-voltar {
+  background-color: #f3f4f6;
+  color: var(--cor-texto-secundario);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-voltar:hover:not(:disabled) {
+  background-color: #e5e7eb;
+  color: var(--cor-texto);
+}
+
+.botao-voltar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Header gradiente */
+.header-agendamento {
+  background: linear-gradient(to right, #f44336, #ff7043);
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Botão principal */
+.botao-agendar {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 1.5rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(244, 67, 54, 0.2), 0 4px 6px -4px rgba(244, 67, 54, 0.2);
+  transition: all 0.3s ease;
+}
+
+.botao-agendar:hover {
+  background-color: var(--cor-primaria-hover);
+  box-shadow: 0 20px 25px -5px rgba(244, 67, 54, 0.2), 0 8px 10px -6px rgba(244, 67, 54, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Serviço selecionado */
+.servico-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+  margin-bottom: 1rem;
+}
+
+.servico-item:hover {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-card-hover);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.servico-selecionado {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-card-selecionado) !important;
+  color: var(--cor-texto-card-selecionado) !important;
+}
+
+.servico-selecionado p {
+  color: #7f1d1d !important;
+}
+
+/* Profissional selecionado */
+.profissional-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+}
+
+.profissional-item:hover {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-card-hover);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profissional-selecionado {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-card-selecionado) !important;
+  color: var(--cor-texto-card-selecionado) !important;
+}
+
+/* Calendário */
+.dia-disponivel {
+  border-bottom: 2px solid var(--cor-terciaria);
+  color: #059669;
+}
+
+.dia-selecionado {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.dia-hoje {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.dia-ocupado {
+  background-color: #fee2e2;
+  color: #dc2626;
+  cursor: not-allowed;
+}
+
+.dia-indisponivel {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Horários */
+.horario-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+}
+
+.horario-item:hover {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-card-hover);
+}
+
+.horario-selecionado {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  border-color: var(--cor-primaria);
+}
+
+/* Resumo */
+.resumo-container {
+  background-color: var(--cor-fundo-lateral);
+  padding: 1.5rem;
+  border-left: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.resumo-titulo {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--cor-texto);
+}
+
+.resumo-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.resumo-item:last-child {
+  border-bottom: none;
+}
+
+.resumo-label {
+  font-size: 0.875rem;
+  color: var(--cor-texto-secundario);
+}
+
+.resumo-valor {
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.resumo-preco {
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda);
+  margin-top: 1rem;
+}
+
+.resumo-preco-valor {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .dialog-agendamento {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+  }
+
+  .painel-lateral {
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .icone-etapa {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .indicador-progresso {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 0.25rem;
+  }
+
+  .resumo-container {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--cor-borda);
+    padding: 1rem;
+  }
+
+  .dialog-main {
+    padding: 1rem;
+  }
+
+  .dialog-footer {
+    padding: 1rem;
+  }
+
+  .botao-proximo,
+  .botao-voltar {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .servico-item,
+  .profissional-item {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .painel-lateral {
+    padding: 0.75rem;
+  }
+
+  .dialog-main {
+    padding: 0.75rem;
+  }
+
+  .resumo-container {
+    padding: 0.75rem;
+  }
+
+  .botao-proximo,
+  .botao-voltar {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
